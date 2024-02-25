@@ -43,7 +43,7 @@ export default async function handler() {
               fontSize: 20,
             }}
           >
-            Librelinks
+            IBA-JU Links
           </span>
         </div>
         <div
@@ -61,7 +61,7 @@ export default async function handler() {
             lineHeight: 1.4,
           }}
         >
-          <span>A free & opensource link in bio tool 🚀</span>
+          <span>A link in bio tool for IBA-JU Students 🚀</span>
         </div>
       </div>
     ),

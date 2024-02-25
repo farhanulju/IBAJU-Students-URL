@@ -14,7 +14,7 @@ const Footer = () => {
             target="_blank"
             href="https://twitter.com/NerdyProgramme2"
           >
-            @urdadx
+            IBA-JU
           </Link>
         </p>
       </footer>

@@ -7,7 +7,7 @@ const Analytics = () => {
   return (
     <>
       <Head>
-        <title>Librelinks | Analytics</title>
+        <title>IBA-JU Links | Analytics</title>
       </Head>
       <Layout>
         <div className="w-full lg:w-[100vw] pl-4 pr-4 overflow-auto">

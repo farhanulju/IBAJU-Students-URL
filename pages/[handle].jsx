@@ -92,7 +92,7 @@ const ProfilePage = () => {
   return (
     <>
       <Head>
-        <title> @{handle} | Librelinks</title>
+        <title> @{handle} | IBA-JU Links</title>
       </Head>
       {!query.isIframe ? (
         <Script
@@ -196,13 +196,13 @@ const ProfilePage = () => {
               style={{ color: theme.accent }}
               className="text-sm text-semibold text-center w lg:text-lg"
             >
-              Made with{' '}
+              Trained to{' '}
               <Link
                 className="font-semibold"
                 target="_blank"
-                href="https://librelinks.vercel.app/"
+                href="/"
               >
-                Librelinks
+                Lead by IBA-JU
               </Link>
             </p>
           </footer>

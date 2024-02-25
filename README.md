@@ -71,7 +71,7 @@ Checkout the `.env.example` file to learn how to get started.
 
 ## 💻 Local Development
 
-1. Download the repo `git clone https://github.com/urdadx/IBA-JU Links.git`
+1. Download the repo `git clone https://github.com/IBA-JU/IBA-JU Links.git`
 2. Change the directory `cd IBA-JU Links`
 3. Install the dependency `npm install`
 4. Start a development server `npm run dev`
@@ -81,11 +81,11 @@ Checkout the `.env.example` file to learn how to get started.
 
 We love our contributors! Here's how you can contribute:
 
-- [Open an issue](https://github.com/urdadx/IBA-JU Links/issues) if you believe you've encountered a bug.
-- Make a [pull request](https://github.com/urdadx/IBA-JU Links/pull) to add new features/make quality-of-life improvements/fix bugs.
+- [Open an issue](https://github.com/IBA-JU/IBA-JU Links/issues) if you believe you've encountered a bug.
+- Make a [pull request](https://github.com/IBA-JU/IBA-JU Links/pull) to add new features/make quality-of-life improvements/fix bugs.
 
-<a href="https://github.com/urdadx/IBA-JU Links/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=urdadx/IBA-JU Links" />
+<a href="https://github.com/IBA-JU/IBA-JU Links/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=IBA-JU/IBA-JU Links" />
 </a>
 
 ## Repo Activity

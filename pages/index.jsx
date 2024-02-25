@@ -52,8 +52,8 @@ const Home = () => {
 
         {/* <!-- Twitter Card meta tags --> */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@urdadx" />
-        <meta name="twitter:creator" content="@urdadx" />
+        <meta name="twitter:site" content="@IBA-JU" />
+        <meta name="twitter:creator" content="@IBA-JU" />
         <meta
           property="twitter:domain"
           content="https://IBA-JU Links.vercel.app/"
@@ -234,7 +234,7 @@ const Home = () => {
                 rel="noopener noreferrer"
                 href="https://twitter.com/NerdyProgramme2"
               >
-                @urdadx
+                @IBA-JU
               </a>
             </h2>
             <div className="flex items-center gap-4 justify-center mt-4">

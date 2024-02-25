@@ -6,7 +6,7 @@ export const siteConfig = {
   mainNav: [],
   links: {
     twitter: 'https://twitter.com/NerdyProgramme2',
-    github: 'https://github.com/urdadx/IBA-JU Links',
+    github: 'https://github.com/IBA-JU/IBA-JU Links',
   },
   redirects: {
     twitter:

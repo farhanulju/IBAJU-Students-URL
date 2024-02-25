@@ -19,7 +19,7 @@ const UserNavButtonMobile = ({ data, logout }) => {
           </Link>
           <Link
             target="_blank"
-            href="https://github.com/urdadx/IBA-JU Links/issues/new/choose"
+            href="https://github.com/IBA-JU/IBA-JU Links/issues/new/choose"
             className="group flex w-full items-center gap-2 rounded-md p-3 text-sm font-medium text-gray-500 transition-all duration-75 hover:bg-gray-100"
           >
             <AlertCircle size={17} color="gray" />

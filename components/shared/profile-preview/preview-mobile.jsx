@@ -127,13 +127,13 @@ const PreviewMobile = ({ close }) => {
               style={{ color: theme.accent }}
               className="text-sm text-semibold text-center lg:text-lg"
             >
-              Trained to{' '}
+              Trained to Lead{' '}
               <Link
                 className="font-semibold"
                 target="_blank"
                 href="/"
               >
-                Lead by IBA-JU
+                by IBA-JU
               </Link>
             </p>
           </footer>

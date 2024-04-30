@@ -16,11 +16,15 @@ export const SocialCards = ({ url, title, color, registerClicks }) => {
     const domainURL = getApexDomain(url);
     // Use a regular expression to match only the site name
     const siteName = domainURL.match(/^[^.]+/);
-
-    if (siteName && !(siteName in specialCases)) {
-      return siteName[0];
+  
+    if (siteName) {
+      if (!(siteName[0] in specialCases)) {
+        return siteName[0];
+      } else {
+        return specialCases[siteName[0]];
+      }
     } else {
-      return specialCases[siteName[0]];
+      return null; // or return a default value or handle the case when siteName is null
     }
   };
 

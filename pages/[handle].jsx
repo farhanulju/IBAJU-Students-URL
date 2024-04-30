@@ -87,12 +87,14 @@ const ProfilePage = () => {
     secondary: fetchedUser?.themePalette.palette[1],
     accent: fetchedUser?.themePalette.palette[2],
     neutral: fetchedUser?.themePalette.palette[3],
+    text: fetchedUser?.themePalette.palette[4]
   };
 
   return (
     <>
       <Head>
         <title> @{handle} | IBA-JU Links</title>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"></link>
       </Head>
       {!query.isIframe ? (
         <Script
@@ -105,66 +107,62 @@ const ProfilePage = () => {
         ''
       )}
       <section
-        style={{ background: theme.primary }}
-        className="h-[100vh] w-[100vw] no-scrollbar overflow-auto"
+  style={{ background: theme.primary }}
+  className="h-[100vh] w-[100vw] no-scrollbar overflow-auto relative"
+>
+  {/* Blurred background image */}
+  <div className="absolute inset-0 overflow-hidden">
+    <img
+      src={fetchedUser && fetchedUser?.image}
+      alt="background"
+      className="w-full h-52 object-cover blur-[5px] align-middle"
+    />
+  </div>
+
+  <div className="flex items-center w-full mt-16 flex-col mx-auto max-w-3xl justify-center px-8 relative z-10">
+    {(isLinksFetching || isUserFetching) && (
+      <div className="absolute -top-5 left-2">
+        <Loader
+          strokeWidth={7}
+          width={15}
+          height={15}
+          bgColor={theme.accent}
+        />
+      </div>
+    )}
+
+    {/* White rectangular shape with rounded-md */}
+
+   
+
+
+<div className="w-full max-w-sm bg-white border border-gray-200 rounded-xl shadow mt-24 mb-14 font-semibold py-4" style={{ color: theme.text }}>
+    <div class="flex justify-end px- pt-2"> 
+    </div>
+    <div class="flex flex-col items-center pb-4">
+        <Avatar.Root
+        className="inline-flex h-[150px] w-[150px] border-2 border-red-950 -mt-24
+              items-center justify-center overflow-hidden rounded-full align-middle  mx-auto"
       >
-        <div className="flex items-center w-full mt-4 flex-col mx-auto max-w-3xl justify-center px-8 lg:mt-16">
-          {(isLinksFetching || isUserFetching) && (
-            <div className="absolute -top-5 left-2">
-              <Loader
-                strokeWidth={7}
-                width={15}
-                height={15}
-                bgColor={theme.accent}
-              />
-            </div>
-          )}
-          <Avatar.Root
-            className="inline-flex h-[70px] w-[70px] border-2 border-blue-300
-						items-center justify-center overflow-hidden rounded-full align-middle lg:w-[96px] lg:h-[96px]"
-          >
-            <Avatar.Image
-              className="h-full w-full rounded-[inherit] object-cover"
-              src={fetchedUser && fetchedUser?.image}
-              referrerPolicy="no-referrer"
-              alt="avatar"
-            />
-            <Avatar.Fallback
-              className="leading-1 flex h-full w-full items-center justify-center bg-white text-[15px] font-medium"
-              delayMs={100}
-            >
-              @
-            </Avatar.Fallback>
-          </Avatar.Root>
-          <p
-            style={{ color: theme.accent }}
-            className="font-bold text-white text-center text-sm mt-4 mb-2 lg:text-xl lg:mt-4"
-          >
-            {fetchedUser?.name}
-          </p>
-          {fetchedUser?.bio && (
-            <p
-              style={{ color: theme.accent }}
-              className="w-[150px] truncate text-center text-sm mt-1 mb-4 lg:text-xl lg:mb-4 lg:w-[600px] "
-            >
-              {fetchedUser?.bio}
-            </p>
-          )}
-          <div className="min-w-max flex flex-wrap gap-2 mb-8 lg:w-fit lg:gap-4">
-            {userLinks
-              ?.filter((link) => link.isSocial && !link.archived)
-              .map(({ id, title, url }) => {
-                return (
-                  <SocialCards
-                    key={title}
-                    title={title}
-                    url={url}
-                    color={theme.accent}
-                    registerClicks={() => handleRegisterClick(id)}
-                  />
-                );
-              })}
-          </div>
+        <Avatar.Image
+          className="h-full w-full rounded-[inherit] object-cover"
+          src={fetchedUser && fetchedUser?.image}
+          referrerPolicy="no-referrer"
+          alt="avatar"
+        />
+        <Avatar.Fallback
+          className="leading-1 flex h-full w-full items-center justify-center bg-white text-[15px] font-medium"
+          delayMs={100}
+        >
+          <img src={fetchedUser && fetchedUser?.image} />
+        </Avatar.Fallback>
+      </Avatar.Root>
+        <span class="mt-2 mb-1 text-2xl font-sans text-gray-900 text-center">{fetchedUser?.name}</span>
+        <span class="text-sm text-gray-500">{fetchedUser?.bio}</span>
+    </div>
+</div>
+
+          
           {userLinks
             ?.filter((link) => !link.isSocial)
             .map(({ id, ...link }) => (
@@ -188,10 +186,34 @@ const ProfilePage = () => {
               </h3>
             </div>
           )}
+           <div className="flex justify-center">
+              <h3
+                style={{ color: theme.neutral }}
+                className="pt-4 text-lg text-white font-semibold tracking-[6px]"
+              >
+                CONTACT ME
+              </h3>
+            </div>
+          <div className="min-w-max flex flex-wrap gap-2 mb-8 lg:w-fit lg:gap-4">
+            {userLinks
+              ?.filter((link) => link.isSocial && !link.archived)
+              .map(({ id, title, url }) => {
+                return (
+                  <SocialCards
+                    key={title}
+                    title={title}
+                    url={url}
+                    color={theme.secondary}
+                    registerClicks={() => handleRegisterClick(id)}
+                  />
+                );
+              })}
+          </div>
         </div>
+        
         <div className="my-10 lg:my-24" />
         {userLinks?.length > 0 ? (
-          <footer className="relative left-1/2 bottom-0 transform -translate-x-1/2 w-[200px]">
+          <footer className="relative hidden left-1/2 bottom-0 transform -translate-x-1/2 w-[200px]">
             <p
               style={{ color: theme.accent }}
               className="text-sm text-semibold text-center w lg:text-lg"

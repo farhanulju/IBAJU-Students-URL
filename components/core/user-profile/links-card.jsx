@@ -17,7 +17,7 @@ const LinkCard = (props) => {
       onClick={props.registerClicks}
       target="_blank"
       rel="noopener noreferrer"
-      className={`flex items-center ${props.buttonStyle} hover:scale-105 transition-all border mb-3 w-full sm:w-64 md:w-72 lg:w-96 xl:w-3/4 2xl:w-3/5 max-w-3xl lg:p-1 lg:mb-6`}
+      className={`flex items-center uppercase ${props.buttonStyle} hover:scale-105 transition-all border mb-3 w-full sm:w-64 md:w-72 lg:w-96 xl:w-3/4 2xl:w-3/5 max-w-sm lg:p-1 lg:mb-6`}
       style={style}
     >
       <div className="flex text-center w-full">
@@ -34,7 +34,7 @@ const LinkCard = (props) => {
         </div>
         <h2
           style={{ color: props.theme.accent }}
-          className="text-[13px] flex justify-center items-center font-semibold w-full text-gray-700 -ml-10 lg:text-lg"
+          className="text-lg text- flex justify-center items-center font-sans w-full text-gray-700 -ml-10 tracking-widest"
         >
           {props.title}
         </h2>

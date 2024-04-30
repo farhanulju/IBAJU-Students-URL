@@ -56,6 +56,9 @@ export const timeAgo = (timestamp) => {
 
 export const isValidUrl = (url) => {
   try {
+    if (url.startsWith('#')) {
+      return true;
+    }
     new URL(url);
     return true;
   } catch (e) {

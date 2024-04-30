@@ -37,8 +37,8 @@ export const themes = [
     palette: ['#282A36', '#242631', '#F8F8F2', '#F477C5'],
   },
   {
-    name: 'Valentine',
-    palette: ['#E96D7B', '#AA92F7', '#88DCDD', '#AF4670'],
+    name: 'IBA',
+    palette: ['#F5F0EA', '#590002', '#FFFFFF', '#780002', '#000000'],
   },
 
   {

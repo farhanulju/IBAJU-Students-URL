@@ -15,6 +15,7 @@ import Script from 'next/script';
 import { SocialCards } from '@/components/core/user-profile/social-cards';
 import Head from 'next/head';
 import Image from 'next/image'
+import { Home } from 'lucide-react';
 
 const ProfilePage = () => {
   const { query } = useRouter();
@@ -235,26 +236,22 @@ const ProfilePage = () => {
       {/* eslint-enable react/jsx-key */}
         </div>
         
-        <div className="my-10 lg:my-24" />
-        {userLinks?.length > 0 ? (
-          <footer className="relative hidden left-1/2 bottom-0 transform -translate-x-1/2 w-[200px]">
-            <p
-              style={{ color: theme.accent }}
-              className="text-sm text-semibold text-center w lg:text-lg"
-            >
-              Trained to Lead{' '}
+        <div className="my-6" />
+        
+          <footer className="relative left-1/2 bottom-0 bg-[590002]">
+            <p              
+              className="text-sm text-semibold text-center w lg:text-lg"            >
+              
               <Link
                 className="font-semibold"
                 target="_blank"
                 href="/"
               >
-                by IBA-JU
+                <Home />
               </Link>
             </p>
           </footer>
-        ) : (
-          ''
-        )}
+     
       </section>
     </>
   );

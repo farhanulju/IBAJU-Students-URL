@@ -146,7 +146,7 @@ const ProfilePage = () => {
       >
         <Avatar.Image
           className="h-full w-full rounded-[inherit] object-cover"
-          src={fetchedUser && fetchedUser?.image}
+          src={`/people/${fetchedUser?.handle}.jpg`}
           referrerPolicy="no-referrer"
           alt="avatar"
         />
@@ -154,7 +154,7 @@ const ProfilePage = () => {
           className="leading-1 flex h-full w-full items-center justify-center bg-white text-[15px] font-medium"
           delayMs={100}
         >
-          <img src={fetchedUser && fetchedUser?.image} />
+          @
         </Avatar.Fallback>
       </Avatar.Root>
         <span class="mt-2 mb-1 text-2xl font-sans text-gray-900 text-center">{fetchedUser?.name}</span>
@@ -191,14 +191,18 @@ const ProfilePage = () => {
                 style={{ color: theme.neutral }}
                 className="pt-4 text-lg text-white font-semibold tracking-[6px]"
               >
-                CONTACT ME
+                 {userLinks?.filter((link) => link.isSocial && !link.archived && link.url !== "#").length > 0
+  ? "CONTACT ME"
+  : ""}
               </h3>
             </div>
-          <div className="min-w-max flex flex-wrap gap-2 mb-8 lg:w-fit lg:gap-4">
+          
             {userLinks
-              ?.filter((link) => link.isSocial && !link.archived)
+              ?.filter((link) => link.isSocial && !link.archived && link.url !=="#")
               .map(({ id, title, url }) => {
                 return (
+                  
+                  <div className="min-w-max flex flex-wrap gap-2 mb-8 lg:w-fit lg:gap-4">
                   <SocialCards
                     key={title}
                     title={title}
@@ -206,9 +210,10 @@ const ProfilePage = () => {
                     color={theme.secondary}
                     registerClicks={() => handleRegisterClick(id)}
                   />
+                  </div>
                 );
               })}
-          </div>
+      
         </div>
         
         <div className="my-10 lg:my-24" />

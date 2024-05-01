@@ -167,7 +167,7 @@ const Settings = () => {
                   value={bio ?? ''}
                   onChange={(e) => setBio(e.target.value)}
                   onBlur={handleSubmit}
-                  placeholder="@Bio"
+                  placeholder="Major | Minor"
                   className="outline-none w-full p-4 h-[120px] rounded-lg border-2
                 bg-gray-100 text-black focus:border-slate-900"
                 />
@@ -175,8 +175,8 @@ const Settings = () => {
             </div>
           </div>
 
-          <div className="max-w-[690px] mx-auto my-10">
-            <h3 className="text-xl font-semibold mb-1">Danger Zone</h3>
+          <div className="max-w-[690px] mx-auto my-10 hidden">
+            <h3 className="text-xl font-semibold mb-1 ">Danger Zone</h3>
             <h3 className="mb-4 text-gray-600 text-sm">
               <Balancer>
                 Deleting your account permanently deletes your page and all your

@@ -15,12 +15,7 @@ const items = [
     icon: <Link2 color="black" size={18} />,
   },
 
-  {
-    title: 'Customize',
-    href: '/admin/customize',
-    icon: <CircleDot size={18} />,
-  },
-
+ 
   {
     title: 'Analytics',
     href: '/admin/analytics',

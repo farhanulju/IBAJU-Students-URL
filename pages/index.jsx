@@ -217,23 +217,36 @@ export default function Home() {
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-        {filteredUsers.map((user) => (
-          <Link key={user.id} href={`/${user.handle}`}>
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300">
-              <img
-                src={`/people/${user.handle}.jpg`}
-                alt={user.name}
-                className="w-full h-64 object-cover"
-              />
-              <div className="p-6">
-                <h2 className="text-2xl font-semibold mb-2 truncate">{user.name}</h2>
-                <p className="text-gray-600 mb-4">@{user.handle}</p>
-                <p className="text-gray-700">{user.bio}</p>
-              </div>
-            </div>
-          </Link>
-        ))}
-      </div>
+  {filteredUsers.map((user) => {
+    let cardColor = '';
+    if (user.bio === 'Finance | Marketing') {
+      cardColor = 'bg-green-100';
+    } else if (user.bio === 'Finance | HRM') {
+      cardColor = 'bg-orange-100';
+    } else if (user.bio === 'Marketing | Finance') {
+      cardColor = 'bg-blue-100';
+    } else if (user.bio === 'Marketing | HRM') {
+      cardColor = 'bg-red-100';
+    }
+
+    return (
+      <Link key={user.id} href={`/${user.handle}`}>
+        <div className={`rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 ${cardColor}`}>
+          <img
+            src={`/people/${user.handle}.jpg`}
+            alt={user.name}
+            className="w-full h-64 object-cover"
+          />
+          <div className="p-6">
+            <h2 className="text-2xl font-semibold mb-2 truncate">{user.name}</h2>
+            <p className="text-gray-600 mb-4">@{user.handle}</p>
+            <p className="text-gray-700">{user.bio}</p>
+          </div>
+        </div>
+      </Link>
+    );
+  })}
+</div>
     </div>
     </>
   );

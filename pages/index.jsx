@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image'
 
+
 export default function Home() {
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
@@ -257,7 +258,7 @@ export default function Home() {
 
 export async function getStaticProps() {
   try {
-    const response = await fetch('/api/users');
+    const response = await fetch('https://iba-students-url.vercel.app/api/users');
     const users = await response.json();
 
     return {

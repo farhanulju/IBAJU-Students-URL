@@ -204,7 +204,7 @@ const ProfilePage = () => {
                   
                   <div className="min-w-max flex flex-wrap gap-2 mb-8 lg:w-fit lg:gap-4">
                   <SocialCards
-                    key={title}
+                    key={id}
                     title={title}
                     url={url}
                     color={theme.secondary}

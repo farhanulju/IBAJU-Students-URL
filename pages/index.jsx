@@ -235,7 +235,7 @@ export default function Home() {
           <img
             src={`/people/${user.handle}.jpg`}
             alt={user.name}
-            className="w-full h-64 object-cover"
+            className="w-full h-84 object-cover sm:h-64 lg:h-64"
           />
           <div className="p-6">
             <h2 className="text-2xl font-semibold mb-2 truncate">{user.name}</h2>

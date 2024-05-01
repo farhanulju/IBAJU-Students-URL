@@ -192,7 +192,12 @@ export default function Home() {
   </Head>
 
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold mb-8 text-center">IBA-JU 29th Batch Students</h1>
+      <h1 className="text-4xl font-bold mb-2 text-center">IBA-JU 29th Batch Students</h1>
+      <div className='text-sm text-center mb-8 underline'>
+  <a href='mailto:badrul.ibaju@juniv.edu' className='text-red-500 hover:text-red-800 transition duration-300'>
+    Contact Batch Manager
+  </a>
+</div>
       <div className="flex justify-center mb-8">
         <div className="flex items-center space-x-4">
           <select
@@ -219,21 +224,28 @@ export default function Home() {
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-  {filteredUsers.map((user) => {
-    let cardColor = '';
-    if (user.bio === 'Finance | Marketing') {
-      cardColor = 'bg-green-100';
-    } else if (user.bio === 'Finance | HRM') {
-      cardColor = 'bg-orange-100';
-    } else if (user.bio === 'Marketing | Finance') {
-      cardColor = 'bg-blue-100';
-    } else if (user.bio === 'Marketing | HRM') {
-      cardColor = 'bg-red-100';
-    }
+      {filteredUsers.map((user) => {
+  let cardColor = '';
+  let cardColorTo = '';
+  if (user.bio === 'Finance | Marketing') {
+    cardColor = 'from-green-100';
+    cardColorTo = 'to-green-50';
+  } else if (user.bio === 'Finance | HRM') {
+    cardColor = 'from-orange-100';
+    cardColorTo = 'to-orange-50';
+  } else if (user.bio === 'Marketing | Finance') {
+    cardColor = 'from-blue-100';
+    cardColorTo = 'to-blue-50';
+  } else if (user.bio === 'Marketing | HRM') {
+    cardColor = 'from-red-100';
+    cardColorTo = 'to-red-50';
+  }
+
+
 
     return (
       <Link key={user.id} href={`/${user.handle}`}>
-        <div className={`rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 ${cardColor}`}>
+        <div className={`rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 bg-gradient-to-r ${cardColor} ${cardColorTo}`}>
           <Image
             src={`/people/${user.handle}.jpg`}
             alt={user.name}
@@ -242,15 +254,16 @@ export default function Home() {
             className="w-full h-84 object-cover sm:h-64 lg:h-64"
           />
           <div className="p-6">
-            <h2 className="text-2xl font-semibold mb-2 truncate">{user.name}</h2>
-            <p className="text-gray-600 mb-4">@{user.handle}</p>
-            <p className="text-gray-700">{user.bio}</p>
+            <h2 className="text-2xl font-semibold mb-2 truncate text-center">{user.name}</h2>
+            <p className="text-gray-600 mb-4 text-center">@{user.handle}</p>
+            <p className="text-gray-700 text-center">{user.bio}</p>
           </div>
         </div>
       </Link>
     );
   })}
 </div>
+
     </div>
     </>
   );

@@ -136,8 +136,48 @@ const ProfilePage = () => {
   return (
     <>
       <Head>
-        <title> @{handle} | IBA-JU Links</title>
+        <title> @{handle} | IBA-JU 29th</title>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"></link>
+        <meta property="og:url" content="https://bba29.iba-ju.edu.bd/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:site_name"
+      content="IBA-JU 29th Batch CV"
+    />
+    <meta property="og:title" content={`${fetchedUser?.name} | BBA 29th`} />
+    <meta
+      property="og:description"
+      content={`${fetchedUser?.name}'s Detail`}
+    />
+    <meta
+      property="og:image"
+      itemprop="image"
+      content={`https://bba29.iba-ju.edu.bd/people/${fetchedUser?.handle}.jpg`}
+    />
+
+    {/* <!-- Twitter Card meta tags --> */}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@IBA-JU" />
+    <meta name="twitter:creator" content="@IBA-JU" />
+    <meta
+      property="twitter:domain"
+      content="https://bba29.iba-ju.edu.bd/"
+    />
+    <meta property="twitter:url" content="https://bba29.iba-ju.edu.bd/" />
+    <meta name="twitter:title" content={`${fetchedUser?.name} | BBA 29th`} />
+    <meta
+      name="twitter:description"
+      content="IBA-JU 29th Batch CV"
+    />
+    <meta
+      name="twitter:image"
+      content={`https://bba29.iba-ju.edu.bd/people/${fetchedUser?.handle}.jpg`}
+    />
+    <meta
+      data-rh="true"
+      name="twitter:image:alt"
+      content={`${fetchedUser?.handle}'s Picture`}
+    />
       </Head>
       {!query.isIframe ? (
         <Script

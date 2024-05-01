@@ -140,9 +140,9 @@ const ProfilePage = () => {
 
 
 <div className="w-full max-w-sm bg-white border border-gray-200 rounded-xl shadow mt-24 mb-14 font-semibold py-4" style={{ color: theme.text }}>
-    <div class="flex justify-end px- pt-2"> 
+    <div className="flex justify-end px- pt-2"> 
     </div>
-    <div class="flex flex-col items-center pb-4">
+    <div className="flex flex-col items-center pb-4">
         <Avatar.Root
         className="inline-flex h-[150px] w-[150px] border-2 border-red-950 -mt-24
               items-center justify-center overflow-hidden rounded-full align-middle  mx-auto"
@@ -156,13 +156,31 @@ const ProfilePage = () => {
           alt="avatar"
         />        
       </Avatar.Root>
-        <span class="mt-2 mb-1 text-2xl font-sans text-gray-900 text-center">{fetchedUser?.name}</span>
-        <span class="text-sm text-gray-500">{fetchedUser?.bio}</span>
-        <a href={`/CV/${fetchedUser?.handle}.png`} class="text-sm bg-[#780002] text-white rounded sm px-2 py-1 mt-4">View CV</a>
+        <span className="mt-2 mb-1 text-2xl font-sans text-gray-900 text-center">{fetchedUser?.name}</span>
+        <span className="text-sm text-gray-500">{fetchedUser?.bio}</span>
+       
     </div>
 </div>
 
-          
+
+<a
+  href={`/CV/${fetchedUser?.handle}.png`}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="flex items-center uppercase rounded-full hover:scale-105 transition-all border mb-3 w-full sm:w-64 md:w-72 lg:w-96 xl:w-3/4 2xl:w-3/5 max-w-sm lg:p-1 lg:mb-6"
+  style={{ background: 'rgb(89, 0, 2)', display: 'flex', border: '1.5px solid rgb(120, 0, 2)' }}
+>
+  <div className="flex text-center w-full">
+    <div className="w-10 h-10"></div>
+    <h2
+      className="text-lg text- flex justify-center items-center font-sans w-full text-gray-700 -ml-10 tracking-widest"
+      style={{ color: 'rgb(255, 255, 255)' }}
+    >
+      Résumé
+    </h2>
+  </div>
+</a>
+
           {userLinks
             ?.filter((link) => !link.isSocial)
             .map(({ id, ...link }) => (
@@ -176,16 +194,7 @@ const ProfilePage = () => {
               />
             ))}
 
-          {userLinks?.length === 0 && (
-            <div className="flex justify-center">
-              <h3
-                style={{ color: theme.neutral }}
-                className="pt-8 text-md text-white font-semibold lg:text-2xl"
-              >
-                Hello World 🚀
-              </h3>
-            </div>
-          )}
+          
            <div className="flex justify-center">
               <h3
                 style={{ color: theme.neutral }}

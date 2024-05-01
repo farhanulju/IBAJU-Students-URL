@@ -159,6 +159,7 @@ const ProfilePage = () => {
       </Avatar.Root>
         <span class="mt-2 mb-1 text-2xl font-sans text-gray-900 text-center">{fetchedUser?.name}</span>
         <span class="text-sm text-gray-500">{fetchedUser?.bio}</span>
+        <a href={`/CV/${fetchedUser?.handle}.png`} class="text-sm bg-[#780002] text-white rounded sm px-2 py-1 mt-4">View CV</a>
     </div>
 </div>
 
@@ -190,19 +191,16 @@ const ProfilePage = () => {
               <h3
                 style={{ color: theme.neutral }}
                 className="pt-4 text-lg text-white font-semibold tracking-[6px]"
-              >
-                 {userLinks?.filter((link) => link.isSocial && !link.archived && link.url !== "#").length > 0
-  ? "CONTACT ME"
-  : ""}
+              >CONTACT ME
               </h3>
             </div>
           {/* eslint-disable react/jsx-key */}
+          <div className="min-w-max flex flex-wrap gap-2 mb-8 lg:w-fit lg:gap-4">
             {userLinks
-              ?.filter((link) => link.isSocial && !link.archived && link.url !=="#")
+              ?.filter((link) => link.isSocial && !link.archived)
               .map(({ id, title, url }) => {
-                return (
-                  
-                  <div className="min-w-max flex flex-wrap gap-2 mb-8 lg:w-fit lg:gap-4">
+                return (                  
+                                   
                   <SocialCards
                     key={id}
                     title={title}
@@ -210,9 +208,22 @@ const ProfilePage = () => {
                     color={theme.secondary}
                     registerClicks={() => handleRegisterClick(id)}
                   />
-                  </div>
+                  
                 );
               })}
+              <a        
+        target="_blank"
+        href={`mailto:${fetchedUser?.email}`}
+        className="hover:scale-125 transition-all w-[45px] h-[45px] rounded-full px-2"
+      >
+        <img
+          loading="lazy"
+          src="https://s2.svgbox.net/social.svg?color=780002&ic=gmail"
+          className="w-[42px] h-[42px]"
+          alt="email"
+        />
+      </a>
+              </div>
       {/* eslint-enable react/jsx-key */}
         </div>
         

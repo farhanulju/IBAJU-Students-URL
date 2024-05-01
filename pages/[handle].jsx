@@ -113,7 +113,7 @@ const ProfilePage = () => {
   {/* Blurred background image */}
   <div className="absolute inset-0 overflow-hidden">
     <img
-      src={fetchedUser && fetchedUser?.image}
+      src={`/people/${fetchedUser?.handle}.jpg`}
       alt="background"
       className="w-full h-52 object-cover blur-[5px] align-middle"
     />

@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
+import Image from 'next/image'
 
 export default function Home() {
   const [users, setUsers] = useState([]);
@@ -232,9 +233,11 @@ export default function Home() {
     return (
       <Link key={user.id} href={`/${user.handle}`}>
         <div className={`rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 ${cardColor}`}>
-          <img
+          <Image
             src={`/people/${user.handle}.jpg`}
             alt={user.name}
+            width={500}
+            height={500}
             className="w-full h-84 object-cover sm:h-64 lg:h-64"
           />
           <div className="p-6">

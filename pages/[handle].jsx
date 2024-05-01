@@ -14,6 +14,7 @@ import useLinks from '@/hooks/useLinks';
 import Script from 'next/script';
 import { SocialCards } from '@/components/core/user-profile/social-cards';
 import Head from 'next/head';
+import Image from 'next/image'
 
 const ProfilePage = () => {
   const { query } = useRouter();
@@ -112,8 +113,10 @@ const ProfilePage = () => {
 >
   {/* Blurred background image */}
   <div className="absolute inset-0 overflow-hidden">
-    <img
+    <Image
       src={`/people/${fetchedUser?.handle}.jpg`}
+      height={500}
+      width={500}
       alt="background"
       className="w-full h-52 object-cover blur-[5px] align-middle"
     />
@@ -144,18 +147,14 @@ const ProfilePage = () => {
         className="inline-flex h-[150px] w-[150px] border-2 border-red-950 -mt-24
               items-center justify-center overflow-hidden rounded-full align-middle  mx-auto"
       >
-        <Avatar.Image
+        <Image
           className="h-full w-full rounded-[inherit] object-cover"
+          width={500}
+          height={500}
           src={`/people/${fetchedUser?.handle}.jpg`}
           referrerPolicy="no-referrer"
           alt="avatar"
-        />
-        <Avatar.Fallback
-          className="leading-1 flex h-full w-full items-center justify-center bg-white text-[15px] font-medium"
-          delayMs={100}
-        >
-          @
-        </Avatar.Fallback>
+        />        
       </Avatar.Root>
         <span class="mt-2 mb-1 text-2xl font-sans text-gray-900 text-center">{fetchedUser?.name}</span>
         <span class="text-sm text-gray-500">{fetchedUser?.bio}</span>

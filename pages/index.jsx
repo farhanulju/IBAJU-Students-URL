@@ -254,3 +254,25 @@ export default function Home() {
     </>
   );
 }
+
+export async function getStaticProps() {
+  try {
+    const response = await fetch('/api/users');
+    const users = await response.json();
+
+    return {
+      props: {
+        users,
+      },
+      revalidate: 60, // Revalidate every 60 seconds
+    };
+  } catch (error) {
+    console.error(error);
+    return {
+      props: {
+        users: [],
+      },
+      revalidate: 60,
+    };
+  }
+}

@@ -196,7 +196,7 @@ const ProfilePage = () => {
   : ""}
               </h3>
             </div>
-          
+          {/* eslint-disable react/jsx-key */}
             {userLinks
               ?.filter((link) => link.isSocial && !link.archived && link.url !=="#")
               .map(({ id, title, url }) => {
@@ -213,7 +213,7 @@ const ProfilePage = () => {
                   </div>
                 );
               })}
-      
+      {/* eslint-enable react/jsx-key */}
         </div>
         
         <div className="my-10 lg:my-24" />

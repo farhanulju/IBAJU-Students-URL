@@ -273,15 +273,11 @@ const ProfilePage = () => {
           alt="email"
         />
       </a>
+
+      
               </div>
-      {/* eslint-enable react/jsx-key */}
-        </div>
-        
-        <div className="my-6" />
-        
-          <footer className="relative left-1/2 bottom-0 bg-[590002]">
-            <p              
-              className="text-sm text-semibold text-center w lg:text-lg"            >
+              <p              
+              className="text-sm text-semibold text-center w lg:text-lg bg-[590002]"            >
               
               <Link
                 className="font-semibold"
@@ -290,7 +286,12 @@ const ProfilePage = () => {
                 <Home />
               </Link>
             </p>
-          </footer>
+      {/* eslint-enable react/jsx-key */}
+        </div>
+        
+      
+        
+        
      
       </section>
     </>

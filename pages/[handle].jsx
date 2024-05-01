@@ -45,11 +45,13 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  // Replace this with your logic to fetch handles or user ids
-  const handles = [];  // Add logic to fetch user handles
-  
-  const paths = handles.map((handle) => ({
-    params: { handle },
+  // Fetch handles from API
+  const res = await axios.get("https://iba-students-url.vercel.app/api/users");
+  const users = res.data;
+
+  // Map users to an array of paths
+  const paths = users.map((user) => ({
+    params: { handle: user.handle },
   }));
 
   // Fallback ensures that if a handle is not present in the paths, it will still try to render the page on the fly
@@ -283,7 +285,6 @@ const ProfilePage = () => {
               
               <Link
                 className="font-semibold"
-                target="_blank"
                 href="/"
               >
                 <Home />

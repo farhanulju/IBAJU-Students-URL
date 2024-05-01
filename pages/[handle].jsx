@@ -17,6 +17,45 @@ import Head from 'next/head';
 import Image from 'next/image'
 import { Home } from 'lucide-react';
 
+
+export async function getStaticProps(context) {
+  const { handle } = context.params;
+  
+  let fetchedUser = null;
+  let userLinks = null;
+  
+  try {
+    const userResult = await axios.get(`https://iba-students-url.vercel.app/api/users/${handle}`);
+    fetchedUser = userResult.data;
+  } catch (error) {
+    console.error("Error fetching user:", error.message);
+  }
+
+  if (fetchedUser) {
+    try {
+      const linksResult = await axios.get(`https://iba-students-url.vercel.app/api/links?userId=${fetchedUser.id}`);
+      userLinks = linksResult.data;
+    } catch (error) {
+      console.error("Error fetching links:", error.message);
+    }
+  }
+  
+  // Pass data to the page via props
+  return { props: { fetchedUser, userLinks }, revalidate: 60 }
+}
+
+export async function getStaticPaths() {
+  // Replace this with your logic to fetch handles or user ids
+  const handles = [];  // Add logic to fetch user handles
+  
+  const paths = handles.map((handle) => ({
+    params: { handle },
+  }));
+
+  // Fallback ensures that if a handle is not present in the paths, it will still try to render the page on the fly
+  return { paths, fallback: 'blocking' };
+}
+
 const ProfilePage = () => {
   const { query } = useRouter();
   const { handle } = query;

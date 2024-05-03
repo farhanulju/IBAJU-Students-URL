@@ -54,7 +54,7 @@ export default function Home({ initialUsers }) {
     />
     <meta property="title" content="IBA-JU 29th Batch CV" />
     <meta
-      property="description"
+      name="description"
       content="IBA-JU 29th Batch CV list"
     />
     <meta property="og:title" content="IBA-JU 29th Batch CV" />

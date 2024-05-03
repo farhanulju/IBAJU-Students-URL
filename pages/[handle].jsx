@@ -130,7 +130,7 @@ const ProfilePage = ({ fetchedUser, userLinks }) => {
         <description>{`${fetchedUser?.name}'s Detail`}</description>
       <meta property="title" content={`${fetchedUser?.name} | BBA 29th`} />
     <meta
-      property="description"
+      name="description"
       content={`${fetchedUser?.name}'s Detail`}
     />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"></link>

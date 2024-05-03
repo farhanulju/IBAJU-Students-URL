@@ -51,10 +51,15 @@ export default function Home({ initialUsers }) {
       property="og:site_name"
       content="IBA-JU 29th Batch CV"
     />
-    <meta property="og:title" content="IBA-JU Links" />
+    <meta property="title" content="IBA-JU 29th Batch CV" />
+    <meta
+      property="description"
+      content="IBA-JU 29th Batch CV list"
+    />
+    <meta property="og:title" content="IBA-JU 29th Batch CV" />
     <meta
       property="og:description"
-      content="IBA-JU 29th Batch CV"
+      content="IBA-JU 29th Batch CV list"
     />
     <meta
       property="og:image"

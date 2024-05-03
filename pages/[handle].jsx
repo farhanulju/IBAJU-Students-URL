@@ -126,8 +126,7 @@ const ProfilePage = ({ fetchedUser, userLinks }) => {
   return (
     <>
       <Head>
-        <title>{`${fetchedUser?.name} | BBA 29th`}</title>
-        <description>{`${fetchedUser?.name}'s Detail`}</description>
+        <title>{`${fetchedUser?.name} | BBA 29th`}</title>        
       <meta property="title" content={`${fetchedUser?.name} | BBA 29th`} />
     <meta
       name="description"

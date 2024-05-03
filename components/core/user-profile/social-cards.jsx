@@ -39,7 +39,7 @@ export const SocialCards = ({ url, title, color, registerClicks }) => {
         className={`hover:scale-125 transition-all w-[45px] h-[45px] rounded-full px-2 ${socialIcon ? '' : 'hidden'}`}
       > <img
           loading="lazy"
-          src={`https://s2.svgbox.net/social.svg?color=${validColor}&ic=${socialIcon}`}
+          src={`https://s2.svgbox.net/social.svg?color=${validColor}&ic=${title}`}
           className="w-[42px] h-[42px]"
           alt={title}
         />      </a>

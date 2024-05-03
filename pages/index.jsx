@@ -1,35 +1,22 @@
 // pages/index.js
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import Image from 'next/image'
+import Image from 'next/image';
 
-
-export default function Home() {
+export default function Home({ initialUsers }) {
   const [users, setUsers] = useState([]);
-  const [filteredUsers, setFilteredUsers] = useState([]);
   const [selectedMajor, setSelectedMajor] = useState('');
   const [selectedMinor, setSelectedMinor] = useState('');
 
   useEffect(() => {
-    const fetchUsers = async () => {
-      try {
-        const response = await fetch('/api/users');
-        const data = await response.json();
-        setUsers(data);
-        setFilteredUsers(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+    setUsers(initialUsers);
+  }, [initialUsers]);
 
-    fetchUsers();
-  }, []);
-
-  useEffect(() => {
+  const filteredUsers = useMemo(() => {
     const filtered = users.filter((user) => {
       if (!user.bio) {
-        return true; // Include users with missing bio in the filtered results
+        return true;
       }
       const [major, minor] = user.bio.split(' | ');
       return (
@@ -38,12 +25,11 @@ export default function Home() {
       );
     });
 
-  // Sort the filtered users based on their handle in ascending order
-  const sorted = filtered.sort((a, b) => {
-    return a.handle.localeCompare(b.handle);
-  });
+    const sorted = filtered.sort((a, b) => {
+      return a.handle.localeCompare(b.handle);
+    });
 
-    setFilteredUsers(sorted);
+    return sorted;
   }, [users, selectedMajor, selectedMinor]);
 
   const handleMajorChange = (e) => {
@@ -55,8 +41,8 @@ export default function Home() {
   };
 
   return (
-<>
-<Head>
+    <>
+    <Head>
     <title>IBA-JU Links | A link in bio tool for IBA-JU Students</title>
     {/* <!-- Open Graph (OG) meta tags --> */}
     <meta property="og:url" content="https://bba29.iba-ju.edu.bd/" />
@@ -132,49 +118,47 @@ export default function Home() {
             {/* Add more minor options */}
           </select>
         </div>
-      </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-      {filteredUsers.map((user) => {
-  let cardColor = '';
-  let cardColorTo = '';
-  if (user.bio === 'Finance | Marketing') {
-    cardColor = 'from-green-100';
-    cardColorTo = 'to-green-50';
-  } else if (user.bio === 'Finance | HRM') {
-    cardColor = 'from-orange-100';
-    cardColorTo = 'to-orange-50';
-  } else if (user.bio === 'Marketing | Finance') {
-    cardColor = 'from-blue-100';
-    cardColorTo = 'to-blue-50';
-  } else if (user.bio === 'Marketing | HRM') {
-    cardColor = 'from-red-100';
-    cardColorTo = 'to-red-50';
-  }
+      </div>   
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {filteredUsers.map((user) => {
+            let cardColor = '';
+            let cardColorTo = '';
+            if (user.bio === 'Finance | Marketing') {
+              cardColor = 'from-green-100';
+              cardColorTo = 'to-green-50';
+            } else if (user.bio === 'Finance | HRM') {
+              cardColor = 'from-orange-100';
+              cardColorTo = 'to-orange-50';
+            } else if (user.bio === 'Marketing | Finance') {
+              cardColor = 'from-blue-100';
+              cardColorTo = 'to-blue-50';
+            } else if (user.bio === 'Marketing | HRM') {
+              cardColor = 'from-red-100';
+              cardColorTo = 'to-red-50';
+            }
 
-
-
-    return (
-      <Link key={user.id} href={`/${user.handle}`}>
-        <div className={`rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 bg-gradient-to-r ${cardColor} ${cardColorTo}`}>
-          <Image
-            src={`/people/${user.handle}.jpg`}
-            alt={user.name}
-            width={500}
-            height={500}
-            className="w-full h-84 object-cover sm:h-64 lg:h-64"
-          />
-          <div className="p-6">
-            <h2 className="text-2xl font-semibold mb-2 truncate text-center">{user.name}</h2>
-            <p className="text-gray-600 mb-4 text-center">@{user.handle}</p>
-            <p className="text-gray-700 text-center">{user.bio}</p>
-          </div>
+            return (
+              <Link key={user.id} href={`/${user.handle}`}>
+                <div className={`rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition duration-300 bg-gradient-to-r ${cardColor} ${cardColorTo}`}>
+                  <Image
+                    src={`/people/${user.handle}.jpg`}
+                    alt={user.name}
+                    width={500}
+                    height={500}
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    className="w-full h-84 object-cover sm:h-64 lg:h-64"
+                  />
+                  <div className="p-6">
+                    <h2 className="text-2xl font-semibold mb-2 truncate text-center">{user.name}</h2>
+                    <p className="text-gray-600 mb-4 text-center">@{user.handle}</p>
+                    <p className="text-gray-700 text-center">{user.bio}</p>
+                  </div>
+                </div>
+              </Link>
+            );
+          })}
         </div>
-      </Link>
-    );
-  })}
-</div>
-
-    </div>
+      </div>
     </>
   );
 }
@@ -186,15 +170,15 @@ export async function getStaticProps() {
 
     return {
       props: {
-        users,
+        initialUsers: users,
       },
-      revalidate: 60, // Revalidate every 60 seconds
+      revalidate: 60,
     };
   } catch (error) {
     console.error(error);
     return {
       props: {
-        users: [],
+        initialUsers: [],
       },
       revalidate: 60,
     };

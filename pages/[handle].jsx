@@ -125,7 +125,11 @@ const ProfilePage = ({ fetchedUser, userLinks }) => {
   return (
     <>
       <Head>
-        <title> @{handle} | IBA-JU 29th</title>
+      <meta property="title" content={`${fetchedUser?.name} | BBA 29th`} />
+    <meta
+      property="description"
+      content={`${fetchedUser?.name}'s Detail`}
+    />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"></link>
         <meta property="og:url" content="https://bba29.iba-ju.edu.bd/" />
     <meta property="og:type" content="website" />

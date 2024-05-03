@@ -44,6 +44,7 @@ export default function Home({ initialUsers }) {
     <>
     <Head>
     <title>IBA-JU 29th Batch CV</title>
+    <description>IBA-JU 29th Batch CV list</description>
     {/* <!-- Open Graph (OG) meta tags --> */}
     <meta property="og:url" content="https://bba29.iba-ju.edu.bd/" />
     <meta property="og:type" content="website" />

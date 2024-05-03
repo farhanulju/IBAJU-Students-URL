@@ -15,6 +15,7 @@ import { SocialCards } from '@/components/core/user-profile/social-cards';
 import Head from 'next/head';
 import Image from 'next/image'
 import { Home } from 'lucide-react';
+import { Description } from '@radix-ui/react-dialog';
 
 
 export async function getStaticProps(context) {
@@ -125,6 +126,8 @@ const ProfilePage = ({ fetchedUser, userLinks }) => {
   return (
     <>
       <Head>
+        <title>{`${fetchedUser?.name} | BBA 29th`}</title>
+        <description>{`${fetchedUser?.name}'s Detail`}</description>
       <meta property="title" content={`${fetchedUser?.name} | BBA 29th`} />
     <meta
       property="description"

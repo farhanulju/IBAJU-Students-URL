@@ -7,10 +7,9 @@ import { useEffect, useState } from 'react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import useUser from '@/hooks/useUser';
-import Loader from '@/components/utils/loading-spinner';
+//import Loader from '@/components/utils/loading-spinner';
 import NotFound from '@/components/utils/not-found';
-import useLinks from '@/hooks/useLinks';
+//import useLinks from '@/hooks/useLinks';
 import Script from 'next/script';
 import { SocialCards } from '@/components/core/user-profile/social-cards';
 import Head from 'next/head';
@@ -58,19 +57,12 @@ export async function getStaticPaths() {
   return { paths, fallback: 'blocking' };
 }
 
-const ProfilePage = () => {
+const ProfilePage = ({ fetchedUser, userLinks }) => {
   const { query } = useRouter();
   const { handle } = query;
 
-  const {
-    data: fetchedUser,
-    isLoading: isUserLoading,
-    isFetching: isUserFetching,
-  } = useUser(handle);
 
-  const { data: userLinks, isFetching: isLinksFetching } = useLinks(
-    fetchedUser?.id
-  );
+
 
   const queryClient = useQueryClient();
   const [, setIsDataLoaded] = useState(false);
@@ -116,9 +108,6 @@ const ProfilePage = () => {
     }
   }, [fetchedUser, userLinks]);
 
-  if (isUserLoading) {
-    return <Loader message={'Loading...'} bgColor="black" textColor="black" />;
-  }
 
   if (!fetchedUser?.id) {
     return <NotFound />;
@@ -205,16 +194,7 @@ const ProfilePage = () => {
   </div>
 
   <div className="flex items-center w-full mt-16 flex-col mx-auto max-w-3xl justify-center px-8 relative z-10">
-    {(isLinksFetching || isUserFetching) && (
-      <div className="absolute -top-5 left-2">
-        <Loader
-          strokeWidth={7}
-          width={15}
-          height={15}
-          bgColor={theme.accent}
-        />
-      </div>
-    )}
+    
 
     {/* White rectangular shape with rounded-md */}
 

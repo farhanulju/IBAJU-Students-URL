@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>IBA-JU Links | A link in bio tool for IBA-JU Students</title>
+        <title>IBA-JU 29th Batch CV</title>
         {/* <!-- Open Graph (OG) meta tags --> */}
         <meta property="og:url" content="https://IBA-JU Links.vercel.app/" />
         <meta property="og:url" content="https://IBA-JU Links.me/" />

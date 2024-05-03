@@ -43,7 +43,7 @@ export default function Home({ initialUsers }) {
   return (
     <>
     <Head>
-    <title>IBA-JU Links | A link in bio tool for IBA-JU Students</title>
+    <title>IBA-JU 29th Batch CV</title>
     {/* <!-- Open Graph (OG) meta tags --> */}
     <meta property="og:url" content="https://bba29.iba-ju.edu.bd/" />
     <meta property="og:type" content="website" />

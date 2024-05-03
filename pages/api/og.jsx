@@ -61,7 +61,7 @@ export default async function handler() {
             lineHeight: 1.4,
           }}
         >
-          <span>A link in bio tool for IBA-JU Students 🚀</span>
+          <span>IBA JU 29th Batch CV</span>
         </div>
       </div>
     ),

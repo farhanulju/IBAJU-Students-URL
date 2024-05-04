@@ -210,10 +210,10 @@ const ProfilePage = ({ fetchedUser, userLinks }) => {
 <div className="w-full max-w-sm bg-white border border-gray-200 rounded-xl shadow mt-24 mb-14 font-semibold py-4" style={{ color: theme.text }}>
     <div className="flex justify-end px- pt-2"> 
     </div>
-    <div className="flex flex-col items-center pb-4">
+    <div className="flex flex-col items-center pb-4 ">
         <Avatar.Root
         className="inline-flex h-[150px] w-[150px] border-2 border-red-950 -mt-24
-              items-center justify-center overflow-hidden rounded-full align-middle  mx-auto"
+              items-center justify-center overflow-hidden rounded-full align-middle  mx-auto bg-white"
       >
         <Image
           className="h-full w-full rounded-[inherit] object-cover"

@@ -63,7 +63,7 @@ export default function Home({ initialUsers }) {
     />
     <meta
       property="og:image"
-      itemprop="image"
+      itemProp="image"
       content="https://bba29.iba-ju.edu.bd/og.png"
     />
 
@@ -76,7 +76,7 @@ export default function Home({ initialUsers }) {
       content="https://bba29.iba-ju.edu.bd/"
     />
     <meta property="twitter:url" content="https://bba29.iba-ju.edu.bd/" />
-    <meta name="twitter:title" content="IBA-JU Links" />
+    <meta name="twitter:title" content="IBA-JU BBA29" />
     <meta
       name="twitter:description"
       content="IBA-JU 29th Batch CV"
@@ -94,9 +94,12 @@ export default function Home({ initialUsers }) {
 
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-2 text-center">IBA-JU 29th Batch Students</h1>
-      <div className='text-sm text-center mb-8 underline'>
-  <a href='mailto:badrul.ibaju@juniv.edu' className='text-red-500 hover:text-red-800 transition duration-300'>
+      <div className='text-sm text-center mb-8'>
+  <a href='mailto:badrul.ibaju@juniv.edu' className='text-blue-500 hover:text-red-800 transition duration-300'>
     Contact Batch Manager
+  </a>{" | "}
+  <a href='/CV/Resume_Book_BBA29_IBAJU.pdf' className='text-blue-500 hover:text-red-800 transition duration-300'>
+    View CV Book[PDF]
   </a>
 </div>
       <div className="flex justify-center mb-8">

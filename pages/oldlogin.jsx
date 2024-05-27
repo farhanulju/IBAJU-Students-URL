@@ -7,9 +7,9 @@ import Head from 'next/head';
 import { useSession } from 'next-auth/react';
 
 export const metadata = {
-  title: 'IBA-JU Links',
+  title: 'IBA-JU BBA29',
   description:
-    'IBA-JU Links is an opensource link in bio tool that helps you easily manage your links, transforming your online presence.',
+    'IBA-JU BBA29 is an opensource link in bio tool that helps you easily manage your links, transforming your online presence.',
 };
 
 const Home = () => {
@@ -21,33 +21,32 @@ const Home = () => {
       <Head>
         <title>IBA-JU 29th Batch CV</title>
         {/* <!-- Open Graph (OG) meta tags --> */}
-        <meta property="og:url" content="https://IBA-JU Links.vercel.app/" />
-        <meta property="og:url" content="https://IBA-JU Links.me/" />
-        <meta property="og:url" content="https://www.IBA-JU Links.me/" />
+        <meta property="og:url" content="https://bba29.iba-ju.edu.bd/" />
+
         <meta property="og:type" content="website" />
         <meta
           property="og:site_name"
-          content="IBA-JU Links - The free & opensource link in bio tool"
+          content="IBA-JU BBA29 - The free & opensource link in bio tool"
         />
-        <meta property="og:title" content="IBA-JU Links" />
+        <meta property="og:title" content="IBA-JU BBA29" />
         <meta
           property="og:description"
-          content="IBA-JU Links is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
+          content="IBA-JU BBA29 is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
         />
         <meta
           property="og:image"
-          itemprop="image"
-          content="https://IBA-JU Links.vercel.app/og.png"
+          itemProp="image"
+          content="https://bba29.iba-ju.edu.bd/og.png"
         />
         <meta
           property="og:image"
-          itemprop="image"
-          content="https://IBA-JU Links.me/og.png"
+          itemProp="image"
+          content="https://IBA-JU BBA29.me/og.png"
         />
         <meta
           property="og:image"
-          itemprop="image"
-          content="https://www.IBA-JU Links.me/og.png"
+          itemProp="image"
+          content="https://www.IBA-JU BBA29.me/og.png"
         />
 
         {/* <!-- Twitter Card meta tags --> */}
@@ -56,102 +55,102 @@ const Home = () => {
         <meta name="twitter:creator" content="@IBA-JU" />
         <meta
           property="twitter:domain"
-          content="https://IBA-JU Links.vercel.app/"
+          content="https://bba29.iba-ju.edu.bd/"
         />
-        <meta property="twitter:domain" content="https://IBA-JU Links.me/" />
-        <meta property="twitter:domain" content="https://www.IBA-JU Links.me/" />
-        <meta property="twitter:url" content="https://IBA-JU Links.vercel.app/" />
-        <meta name="twitter:title" content="IBA-JU Links" />
+        <meta property="twitter:domain" content="https://IBA-JU BBA29.me/" />
+        <meta property="twitter:domain" content="https://www.IBA-JU BBA29.me/" />
+        <meta property="twitter:url" content="https://bba29.iba-ju.edu.bd/" />
+        <meta name="twitter:title" content="IBA-JU BBA29" />
         <meta
           name="twitter:description"
-          content="IBA-JU Links is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
+          content="IBA-JU BBA29 is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
         />
         <meta
           name="twitter:image"
-          content="https://IBA-JU Links.vercel.app/og.png"
+          content="https://bba29.iba-ju.edu.bd/og.png"
         />
-        <meta name="twitter:image" content="https://IBA-JU Links.me/og.png" />
-        <meta name="twitter:image" content="https://www.IBA-JU Links.me/og.png" />
+        <meta name="twitter:image" content="https://IBA-JU BBA29.me/og.png" />
+        <meta name="twitter:image" content="https://www.IBA-JU BBA29.me/og.png" />
         <meta
           data-rh="true"
           name="twitter:image:alt"
-          content="IBA-JU Links is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
+          content="IBA-JU BBA29 is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
         />
 
         {/* <!-- LinkedIn meta tags --> */}
         <meta
           property="og:linkedin:image"
-          content="https://IBA-JU Links.vercel.app/og.png"
+          content="https://bba29.iba-ju.edu.bd/og.png"
         />
         <meta
           property="og:linkedin:image"
-          content="https://IBA-JU Links.me/og.png"
+          content="https://IBA-JU BBA29.me/og.png"
         />
         <meta
           property="og:linkedin:image"
-          content="https://www.IBA-JU Links.me/og.png"
+          content="https://www.IBA-JU BBA29.me/og.png"
         />
-        <meta property="og:linkedin:title" content="IBA-JU Links" />
+        <meta property="og:linkedin:title" content="IBA-JU BBA29" />
         <meta
           property="og:linkedin:description"
-          content="IBA-JU Links is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
+          content="IBA-JU BBA29 is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
         />
 
         {/* <!-- Facebook meta tags --> */}
         <meta
           property="og:facebook:image"
-          content="https://IBA-JU Links.vercel.app/og.png"
+          content="https://bba29.iba-ju.edu.bd/og.png"
         />
         <meta
           property="og:facebook:image"
-          content="https://IBA-JU Links.me/og.png"
+          content="https://IBA-JU BBA29.me/og.png"
         />
         <meta
           property="og:facebook:image"
-          content="https://www.IBA-JU Links.me/og.png"
+          content="https://www.IBA-JU BBA29.me/og.png"
         />
-        <meta property="og:facebook:title" content="IBA-JU Links" />
+        <meta property="og:facebook:title" content="IBA-JU BBA29" />
         <meta
           property="og:facebook:description"
-          content="IBA-JU Links is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
+          content="IBA-JU BBA29 is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
         />
 
         {/* <!-- Instagram meta tags --> */}
         <meta
           property="og:instagram:image"
-          content="https://IBA-JU Links.vercel.app/og.png"
+          content="https://bba29.iba-ju.edu.bd/og.png"
         />
         <meta
           property="og:instagram:image"
-          content="https://IBA-JU Links.me/og.png"
+          content="https://IBA-JU BBA29.me/og.png"
         />
         <meta
           property="og:instagram:image"
-          content="https://www.IBA-JU Links.me/og.png"
+          content="https://www.IBA-JU BBA29.me/og.png"
         />
-        <meta property="og:instagram:title" content="IBA-JU Links" />
+        <meta property="og:instagram:title" content="IBA-JU BBA29" />
         <meta
           property="og:instagram:description"
-          content="IBA-JU Links is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
+          content="IBA-JU BBA29 is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
         />
 
         {/* <!-- Pinterest meta tags --> */}
         <meta
           property="og:pinterest:image"
-          content="https://IBA-JU Links.vercel.app/og.png"
+          content="https://bba29.iba-ju.edu.bd/og.png"
         />
         <meta
           property="og:pinterest:image"
-          content="https://IBA-JU Links.me/og.png"
+          content="https://IBA-JU BBA29.me/og.png"
         />
         <meta
           property="og:pinterest:image"
-          content="https://www.IBA-JU Links.me/og.png"
+          content="https://www.IBA-JU BBA29.me/og.png"
         />
-        <meta property="og:pinterest:title" content="IBA-JU Links" />
+        <meta property="og:pinterest:title" content="IBA-JU BBA29" />
         <meta
           property="og:pinterest:description"
-          content="IBA-JU Links is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
+          content="IBA-JU BBA29 is an opensource link in bio tool that helps you easily manage your links, transforming your online presence."
         />
       </Head>
       <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]">
@@ -170,7 +169,7 @@ const Home = () => {
                   className="flex items-center gap-2 font-bold text-xl"
                   href="/"
                 >
-                  <h3 className="lg:block">IBA-JU Links</h3>
+                  <h3 className="lg:block">IBA-JU BBA29</h3>
                 </Link>
 
                 <div className="relative items-center w-28 z-10 md:absolute md:inset-y-0 md:right-0">
@@ -191,7 +190,7 @@ const Home = () => {
                   <span className="hero-title block ">link in bio tool</span>
                 </h1>
                 <p className="max-w-md mx-auto mt-3 text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                  IBA-JU Links is an opensource link in bio tool that helps you
+                  IBA-JU BBA29 is an opensource link in bio tool that helps you
                   easily manage your links, transforming your online presence.
                 </p>
               </div>

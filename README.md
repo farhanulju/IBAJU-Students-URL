@@ -1,12 +1,12 @@
-# IBA-JU Links
+# IBA-JU BBA29
 
-IBA-JU Links is an open-source link in bio tool for IBA-JU Students.
+IBA-JU BBA29 is an open-source link in bio tool for IBA-JU Students.
 
-The goal of IBA-JU Links is to provide users with a platform that helps them to connect to their audience through a single link.
+The goal of IBA-JU BBA29 is to provide users with a platform that helps them to connect to their audience through a single link.
 
-Official site: [https://IBA-JU Links.me](https://IBA-JU Links.me)
+Official site: [https://IBA-JU BBA29.me](https://IBA-JU BBA29.me)
 
-An example IBA-JU Links page: [https://IBA-JU Links.me/maayez](https://IBA-JU Links.me/maayez)
+An example IBA-JU BBA29 page: [https://IBA-JU BBA29.me/maayez](https://IBA-JU BBA29.me/maayez)
 
 ## ⚒️ Demo
 
@@ -14,7 +14,7 @@ Create and customize your link in bio in minutes✨
 
 <div style="width: 600px;">
 
-![IBA-JU Links Demo](.github/demo.gif)
+![IBA-JU BBA29 Demo](.github/demo.gif)
 
 </div>
 
@@ -41,7 +41,7 @@ It has 4 Core Features:
 
 ## 📁 Project Structure
 
-IBA-JU Links is created with the NextJS web framework and follows its project structure.
+IBA-JU BBA29 is created with the NextJS web framework and follows its project structure.
 
 | <div style="width:115px">**Page Route**</div> | **Code Path**               | **Description**                                 |
 | --------------------------------------------- | --------------------------- | ----------------------------------------------- |
@@ -71,21 +71,21 @@ Checkout the `.env.example` file to learn how to get started.
 
 ## 💻 Local Development
 
-1. Download the repo `git clone https://github.com/IBA-JU/IBA-JU Links.git`
-2. Change the directory `cd IBA-JU Links`
+1. Download the repo `git clone https://github.com/IBA-JU/IBA-JU BBA29.git`
+2. Change the directory `cd IBA-JU BBA29`
 3. Install the dependency `npm install`
 4. Start a development server `npm run dev`
-5. Open your browser and visit [http://localhost:3000](http://localhost:3000) to see IBA-JU Links live
+5. Open your browser and visit [http://localhost:3000](http://localhost:3000) to see IBA-JU BBA29 live
 
 ## Contributing 🤝
 
 We love our contributors! Here's how you can contribute:
 
-- [Open an issue](https://github.com/IBA-JU/IBA-JU Links/issues) if you believe you've encountered a bug.
-- Make a [pull request](https://github.com/IBA-JU/IBA-JU Links/pull) to add new features/make quality-of-life improvements/fix bugs.
+- [Open an issue](https://github.com/IBA-JU/IBA-JU BBA29/issues) if you believe you've encountered a bug.
+- Make a [pull request](https://github.com/IBA-JU/IBA-JU BBA29/pull) to add new features/make quality-of-life improvements/fix bugs.
 
-<a href="https://github.com/IBA-JU/IBA-JU Links/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=IBA-JU/IBA-JU Links" />
+<a href="https://github.com/IBA-JU/IBA-JU BBA29/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=IBA-JU/IBA-JU BBA29" />
 </a>
 
 ## Repo Activity

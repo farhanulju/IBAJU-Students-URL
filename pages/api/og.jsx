@@ -43,7 +43,7 @@ export default async function handler() {
               fontSize: 20,
             }}
           >
-            IBA-JU Links
+            IBA-JU BBA29
           </span>
         </div>
         <div

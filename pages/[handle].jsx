@@ -146,7 +146,7 @@ const ProfilePage = ({ fetchedUser, userLinks }) => {
     />
     <meta
       property="og:image"
-      itemprop="image"
+      itemProp="image"
       content={`https://bba29.iba-ju.edu.bd/people/${fetchedUser?.handle}.jpg`}
     />
 

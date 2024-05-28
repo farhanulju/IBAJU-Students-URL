@@ -98,7 +98,7 @@ export default function Home({ initialUsers }) {
   <a href='mailto:badrul.ibaju@juniv.edu' className='text-blue-500 hover:text-red-800 transition duration-300'>
     Contact Batch Manager
   </a>{" | "}
-  <a href='/CV/Resume_Book_BBA29_IBAJU.pdf' className='text-blue-500 hover:text-red-800 transition duration-300'>
+  <a href='https://drive.google.com/file/d/1gDHuIt1nqubsE85jovLpEyNkxlFVFn_F/view?usp=drivesdk' className='text-blue-500 hover:text-red-800 transition duration-300'>
     View CV Book[PDF]
   </a>
 </div>

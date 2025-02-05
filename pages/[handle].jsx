@@ -235,7 +235,7 @@ const ProfilePage = ({ fetchedUser, userLinks }) => {
   href={`/CV/${fetchedUser?.handle}.png`}
   target="_blank"
   rel="noopener noreferrer"
-  className="flex items-center uppercase rounded-full hover:scale-105 transition-all border mb-3 w-full sm:w-64 md:w-72 lg:w-96 xl:w-3/4 2xl:w-3/5 max-w-sm lg:p-1 lg:mb-6"
+  className="flex items-center uppercase rounded-full hover:scale-105 transition-all border mb-3 w-full sm:w-64 md:w-72 lg:w-96 xl:w-3/4 2xl:w-3/5 max-w-sm lg:p-1 lg:mb-6 !hidden"
   style={{ background: 'rgb(89, 0, 2)', display: 'flex', border: '1.5px solid rgb(120, 0, 2)' }}
 >
   <div className="flex text-center w-full">
@@ -249,7 +249,7 @@ const ProfilePage = ({ fetchedUser, userLinks }) => {
   </div>
 </a>
 
-          {userLinks
+          <div className='hidden'>{userLinks
             ?.filter((link) => !link.isSocial)
             .map(({ id, ...link }) => (
               <LinkCard
@@ -261,7 +261,7 @@ const ProfilePage = ({ fetchedUser, userLinks }) => {
                 registerClicks={() => handleRegisterClick(id)}
               />
             ))}
-
+</div>
           
            <div className="flex justify-center">
               <h3

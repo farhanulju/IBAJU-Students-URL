@@ -95,10 +95,11 @@ export default function Home({ initialUsers }) {
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold mb-2 text-center">IBA-JU 29th Batch Students</h1>
       <div className='text-sm text-center mb-8'>
-  <a href='mailto:badrul.ibaju@juniv.edu' className='text-blue-500 hover:text-red-800 transition duration-300'>
+  <a href='mailto:badrul.ibaju@juniv.edu' className='text-blue-500 hover:text-red-800 transition duration-300 hidden'>
     Contact Batch Manager
-  </a>{" | "}
-  <a href='https://drive.google.com/file/d/1gDHuIt1nqubsE85jovLpEyNkxlFVFn_F/view?usp=drivesdk' className='text-blue-500 hover:text-red-800 transition duration-300'>
+  </a>{//" | "
+  }
+  <a href='https://drive.google.com/file/d/1gDHuIt1nqubsE85jovLpEyNkxlFVFn_F/view?usp=drivesdk' className='text-blue-500 hover:text-red-800 transition duration-300 hidden'>
     View CV Book[PDF]
   </a>
 </div>
